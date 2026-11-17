@@ -1,0 +1,103 @@
+{
+  "config": {
+    "catboost_depth": 8,
+    "catboost_iterations": 500,
+    "estimators": 350,
+    "eval_users": 2000,
+    "first_candidate_k": 100,
+    "learning_rate": 0.05,
+    "negatives_per_positive": 20,
+    "num_leaves": 31,
+    "score_batch_size": 100000,
+    "second_final_k": 330,
+    "second_initial_k": 600,
+    "second_stage1_k": 130,
+    "seed": 42,
+    "train_users": 6000
+  },
+  "metrics": {
+    "catboost": {
+      "cold_start": {
+        "candidate_recall": 0.08366214823379842,
+        "customers": 916,
+        "map_at_12": 0.006127837073914741,
+        "recall_at_12": 0.019764240793170924
+      },
+      "history": {
+        "candidate_recall": 0.17877744636113624,
+        "customers": 1084,
+        "map_at_12": 0.04522556215821899,
+        "recall_at_12": 0.09776071052714574
+      },
+      "overall": {
+        "candidate_recall": 0.13521463981881549,
+        "customers": 2000,
+        "map_at_12": 0.02731880406960764,
+        "recall_at_12": 0.06203832738898528
+      }
+    },
+    "equal_rank_fusion": {
+      "cold_start": {
+        "candidate_recall": 0.08366214823379842,
+        "customers": 916,
+        "map_at_12": 0.007107181096381033,
+        "recall_at_12": 0.022087142297295134
+      },
+      "history": {
+        "candidate_recall": 0.17877744636113624,
+        "customers": 1084,
+        "map_at_12": 0.04626954896442904,
+        "recall_at_12": 0.09840976166051423
+      },
+      "overall": {
+        "candidate_recall": 0.13521463981881549,
+        "customers": 2000,
+        "map_at_12": 0.028333184480863055,
+        "recall_at_12": 0.06345400199215988
+      }
+    },
+    "lightgbm": {
+      "cold_start": {
+        "candidate_recall": 0.08366214823379842,
+        "customers": 916,
+        "map_at_12": 0.007548241827717811,
+        "recall_at_12": 0.026108248556392658
+      },
+      "history": {
+        "candidate_recall": 0.17877744636113624,
+        "customers": 1084,
+        "map_at_12": 0.04524080197511932,
+        "recall_at_12": 0.09368167826138676
+      },
+      "overall": {
+        "candidate_recall": 0.13521463981881549,
+        "customers": 2000,
+        "map_at_12": 0.02797760942760943,
+        "recall_at_12": 0.06273304745649946
+      }
+    }
+  },
+  "runtime_seconds": 128.1723342500627,
+  "scope": "pre-specified equal-rank LightGBM/CatBoost blend on identical Top-100 candidates",
+  "training": {
+    "examples": 41703,
+    "positives": 1997,
+    "relevant_pairs": 18922,
+    "retrieved_pair_fraction": 0.10553852658281365,
+    "retrieved_relevant_pairs": 1997,
+    "users": 6000,
+    "users_with_retrieved_positive": 1543
+  },
+  "windows": {
+    "final": {
+      "context_start": "2020-08-05",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "train": {
+      "context_start": "2020-07-29",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    }
+  }
+}

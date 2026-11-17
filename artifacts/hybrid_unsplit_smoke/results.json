@@ -1,0 +1,398 @@
+{
+  "architecture": {
+    "candidate_policy": "direct_union",
+    "discovery_policy": "allow each generator to return both previously purchased and new articles",
+    "discovery_sources": [
+      "bpr_mf",
+      "implicit_als",
+      "co_purchase",
+      "popularity",
+      "segment_popularity",
+      "two_tower"
+    ],
+    "rankers": "DLRM and LightGBM LambdaRank over identical user, item, source provenance, repeat, support-count, and union-rank features",
+    "repeat_policy": "no separate repeat generator",
+    "union_priority": "sum of per-source reciprocal ranks, deterministic item-row tie break"
+  },
+  "config": {
+    "als_factors": 16,
+    "als_iterations": 2,
+    "als_k": 50,
+    "als_regularization": 0.01,
+    "batch_size": 2048,
+    "candidate_policy": "direct_union",
+    "co_purchase_k": 30,
+    "dlrm_epochs": 1,
+    "learning_rate": 0.003,
+    "lgbm_estimators": 50,
+    "lgbm_learning_rate": 0.05,
+    "lgbm_num_leaves": 31,
+    "max_eval_users": 200,
+    "max_mf_pairs": 50000,
+    "max_train_users": 300,
+    "max_two_tower_pairs": 10000,
+    "mf_dim": 16,
+    "mf_epochs": 1,
+    "mf_k": 50,
+    "negatives_per_positive": 5,
+    "popularity_k": 30,
+    "profile": "hybrid_unsplit_smoke",
+    "repeat_k": 0,
+    "retrieval_batch_size": 64,
+    "seed": 42,
+    "segment_k": 30,
+    "two_tower_epochs": 1,
+    "two_tower_k": 50,
+    "union_k": 100
+  },
+  "dataset": {
+    "evaluation_cold_start_customers": 99,
+    "evaluation_customers_sampled": 200,
+    "evaluation_history_customers": 101,
+    "final_catalog_items": 29009,
+    "final_context_rows": 1059723,
+    "final_validation_rows": 240311,
+    "train_catalog_items": 29278,
+    "train_context_rows": 1069693,
+    "train_customers_sampled": 300,
+    "train_label_rows": 255241,
+    "validation_pairs_in_catalog": 517,
+    "validation_relevant_pairs": 535
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6",
+    "torch": "2.15.0"
+  },
+  "metrics": {
+    "bpr_mf": {
+      "candidate_k": 50,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.05134680134680134,
+          "customers": 99,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "history": {
+          "candidate_recall": 0.0,
+          "customers": 101,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "overall": {
+          "candidate_recall": 0.025416666666666664,
+          "customers": 200,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        }
+      }
+    },
+    "co_purchase": {
+      "candidate_k": 30,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.024410774410774414,
+          "customers": 99,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "history": {
+          "candidate_recall": 0.09513201320132014,
+          "customers": 101,
+          "map_at_12": 0.015726394067978225,
+          "recall_at_12": 0.056848184818481855
+        },
+        "overall": {
+          "candidate_recall": 0.06012499999999999,
+          "customers": 200,
+          "map_at_12": 0.007941829004329003,
+          "recall_at_12": 0.028708333333333332
+        }
+      }
+    },
+    "direct_candidate_union": {
+      "candidate_k": 100,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.09560759106213651,
+          "customers": 99,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "history": {
+          "candidate_recall": 0.15357142857142858,
+          "customers": 101,
+          "map_at_12": 0.005353222822282228,
+          "recall_at_12": 0.025495049504950497
+        },
+        "overall": {
+          "candidate_recall": 0.124879329004329,
+          "customers": 200,
+          "map_at_12": 0.0027033775252525254,
+          "recall_at_12": 0.012875
+        }
+      }
+    },
+    "dlrm": {
+      "candidate_k": 100,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.09560759106213651,
+          "customers": 99,
+          "map_at_12": 0.0007949869060980171,
+          "recall_at_12": 0.0058922558922558915
+        },
+        "history": {
+          "candidate_recall": 0.15357142857142858,
+          "customers": 101,
+          "map_at_12": 0.0022002200220022,
+          "recall_at_12": 0.0132013201320132
+        },
+        "overall": {
+          "candidate_recall": 0.124879329004329,
+          "customers": 200,
+          "map_at_12": 0.0015046296296296296,
+          "recall_at_12": 0.009583333333333333
+        }
+      }
+    },
+    "implicit_als": {
+      "candidate_k": 50,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.05134680134680134,
+          "customers": 99,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "history": {
+          "candidate_recall": 0.10189768976897691,
+          "customers": 101,
+          "map_at_12": 0.01799215635849299,
+          "recall_at_12": 0.04909240924092409
+        },
+        "overall": {
+          "candidate_recall": 0.07687499999999999,
+          "customers": 200,
+          "map_at_12": 0.00908603896103896,
+          "recall_at_12": 0.024791666666666667
+        }
+      }
+    },
+    "lightgbm_lambdarank": {
+      "candidate_k": 100,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.09560759106213651,
+          "customers": 99,
+          "map_at_12": 0.0016835016835016834,
+          "recall_at_12": 0.010101010101010102
+        },
+        "history": {
+          "candidate_recall": 0.15357142857142858,
+          "customers": 101,
+          "map_at_12": 0.0071626805537696615,
+          "recall_at_12": 0.03993399339933993
+        },
+        "overall": {
+          "candidate_recall": 0.124879329004329,
+          "customers": 200,
+          "map_at_12": 0.004450487012987014,
+          "recall_at_12": 0.025166666666666667
+        }
+      }
+    },
+    "popularity": {
+      "candidate_k": 30,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.024410774410774414,
+          "customers": 99,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "history": {
+          "candidate_recall": 0.03838991041961339,
+          "customers": 101,
+          "map_at_12": 0.0016464146414641465,
+          "recall_at_12": 0.01608910891089109
+        },
+        "overall": {
+          "candidate_recall": 0.03147023809523809,
+          "customers": 200,
+          "map_at_12": 0.0008314393939393939,
+          "recall_at_12": 0.008125
+        }
+      }
+    },
+    "segment_popularity": {
+      "candidate_k": 30,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.02288031833486379,
+          "customers": 99,
+          "map_at_12": 0.0008417508417508417,
+          "recall_at_12": 0.010101010101010102
+        },
+        "history": {
+          "candidate_recall": 0.045485619990570485,
+          "customers": 101,
+          "map_at_12": 0.001019075121797894,
+          "recall_at_12": 0.007602545968882602
+        },
+        "overall": {
+          "candidate_recall": 0.03429599567099567,
+          "customers": 200,
+          "map_at_12": 0.0009312996031746032,
+          "recall_at_12": 0.008839285714285714
+        }
+      }
+    },
+    "two_tower": {
+      "candidate_k": 50,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.027349250076522804,
+          "customers": 99,
+          "map_at_12": 0.000505050505050505,
+          "recall_at_12": 0.004621977349250076
+        },
+        "history": {
+          "candidate_recall": 0.041996699669967004,
+          "customers": 101,
+          "map_at_12": 0.001667845355964168,
+          "recall_at_12": 0.010478547854785478
+        },
+        "overall": {
+          "candidate_recall": 0.034746212121212115,
+          "customers": 200,
+          "map_at_12": 0.0010922619047619047,
+          "recall_at_12": 0.007579545454545454
+        }
+      }
+    }
+  },
+  "runtime_seconds": {
+    "dlrm_training": 0.009510125033557415,
+    "final_dlrm_scoring": 0.02003779192455113,
+    "final_lightgbm_scoring": 0.017898624995723367,
+    "final_snapshot_retrieval": 14.94145595910959,
+    "final_source_detail": {
+      "bpr": 1.3828288330696523,
+      "candidate_unions": 0.04028454190120101,
+      "co_purchase": 8.43272658297792,
+      "implicit_als": 0.9739469578489661,
+      "popularity_sources": 3.7240741250570863,
+      "two_tower": 0.36824729200452566
+    },
+    "lightgbm_training": 0.03285012487322092,
+    "load_and_features": 80.9968570000492,
+    "total": 115.86170179210603,
+    "train_snapshot_retrieval": 16.599981457926333,
+    "train_source_detail": {
+      "bpr": 2.2584198331460357,
+      "candidate_unions": 0.056224375031888485,
+      "co_purchase": 8.560680167051032,
+      "implicit_als": 1.0253910841420293,
+      "popularity_sources": 4.121365915983915,
+      "two_tower": 0.5606027089525014
+    }
+  },
+  "saved_candidate_pools": [
+    "train_candidate_pool.npz",
+    "final_candidate_pool.npz"
+  ],
+  "training": {
+    "candidate_objectives": {
+      "bpr_mf": "pairwise BPR on context purchases and uniform unobserved negatives",
+      "dlrm": "weighted BCE on next-week positives and negatives sampled from the matching candidate union",
+      "implicit_als": "confidence-weighted sparse interaction reconstruction",
+      "lightgbm": "LambdaRank grouped by customer on the same candidate-aware examples; truncation level 12",
+      "two_tower": "BCE on context purchases and uniform full-catalog negatives"
+    },
+    "dlrm_examples": {
+      "positives": 94,
+      "relevant_pairs": 984,
+      "retrieved_pair_fraction": 0.09552845528455285,
+      "retrieved_relevant_pairs": 94,
+      "rows": 564,
+      "users": 300,
+      "users_with_retrieved_positive": 69
+    },
+    "dlrm_losses": [
+      1.2452512979507446
+    ],
+    "final_snapshot": {
+      "bpr_losses": [
+        0.6931711815071105
+      ],
+      "co_purchase_items_with_neighbors": 27974,
+      "two_tower_examples": {
+        "positive_pairs": 10000,
+        "training_rows": 20000
+      },
+      "two_tower_losses": [
+        0.6461581027030945
+      ]
+    },
+    "lightgbm": {
+      "estimators": 50,
+      "feature_importance_gain": {
+        "item_average_price": 130.91772267222404,
+        "item_colour_group_name": 12.078709840774536,
+        "item_days_since_purchase": 0.0,
+        "item_garment_group_name": 87.14077490568161,
+        "item_index_group_name": 0.0,
+        "item_log_popularity": 70.9777457639575,
+        "item_product_type_name": 83.81665992736816,
+        "item_section_name": 79.89664030075073,
+        "previously_purchased_flag": 0.0,
+        "rr_bpr_mf": 50.27888035774231,
+        "rr_co_purchase": 178.97510933876038,
+        "rr_implicit_als": 80.06775104999542,
+        "rr_popularity": 0.0,
+        "rr_segment_popularity": 160.31923007965088,
+        "rr_two_tower": 119.30485261976719,
+        "source_support_count": 42.6758434176445,
+        "union_rank": 232.56552461907268,
+        "user_age": 88.65947139263153,
+        "user_age_bucket": 0.0,
+        "user_club_member_status": 0.0,
+        "user_days_since_purchase": 59.38342046737671,
+        "user_fashion_news_frequency": 8.416979253292084,
+        "user_log_activity": 24.804025530815125,
+        "user_preferred_channel": 18.58724021911621,
+        "user_preferred_garment_group": 0.0,
+        "user_preferred_index_group": 0.0
+      },
+      "groups": 69
+    },
+    "train_snapshot": {
+      "bpr_losses": [
+        0.6931580393028259
+      ],
+      "co_purchase_items_with_neighbors": 28255,
+      "two_tower_examples": {
+        "positive_pairs": 10000,
+        "training_rows": 20000
+      },
+      "two_tower_losses": [
+        0.555674111700058
+      ]
+    }
+  },
+  "windows": {
+    "final_evaluation": {
+      "context_start": "2020-08-19",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "ranker_training": {
+      "context_start": "2020-08-12",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    }
+  }
+}

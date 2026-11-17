@@ -1,0 +1,145 @@
+{
+  "config": {
+    "estimators": 350,
+    "eval_users": 2000,
+    "first_candidate_k": 100,
+    "learning_rate": 0.05,
+    "negatives_per_positive": 20,
+    "num_leaves": 31,
+    "score_batch_size": 100000,
+    "second_final_k": 330,
+    "second_initial_k": 600,
+    "second_stage1_k": 130,
+    "seed": 42,
+    "train_users": 6000
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6"
+  },
+  "metrics": {
+    "stage1_final": {
+      "initial_600": {
+        "cold_start": {
+          "candidate_recall": 0.3467197989899178,
+          "customers": 775,
+          "map_at_12": 0.006246053045466535,
+          "recall_at_12": 0.026884681626617106
+        },
+        "history": {
+          "candidate_recall": 0.3454466403242861,
+          "customers": 1225,
+          "map_at_12": 0.03115426186760006,
+          "recall_at_12": 0.06102198708321157
+        },
+        "overall": {
+          "candidate_recall": 0.3459399893072184,
+          "customers": 2000,
+          "map_at_12": 0.021502330949023322,
+          "recall_at_12": 0.04779378121878122
+        }
+      },
+      "selected_130": {
+        "cold_start": {
+          "candidate_recall": 0.14997565049551465,
+          "customers": 775,
+          "map_at_12": 0.006246053045466535,
+          "recall_at_12": 0.026884681626617106
+        },
+        "history": {
+          "candidate_recall": 0.18349792975710713,
+          "customers": 1225,
+          "map_at_12": 0.03115426186760006,
+          "recall_at_12": 0.06102198708321157
+        },
+        "overall": {
+          "candidate_recall": 0.17050804654324003,
+          "customers": 2000,
+          "map_at_12": 0.021502330949023322,
+          "recall_at_12": 0.04779378121878122
+        }
+      }
+    },
+    "stage2_candidate_pool": {
+      "cold_start": {
+        "candidate_recall": 0.21417742553616914,
+        "customers": 775,
+        "map_at_12": 0.006246053045466535,
+        "recall_at_12": 0.026884681626617106
+      },
+      "history": {
+        "candidate_recall": 0.2637822062873557,
+        "customers": 1225,
+        "map_at_12": 0.03115426186760006,
+        "recall_at_12": 0.06102198708321157
+      },
+      "overall": {
+        "candidate_recall": 0.24456035374627094,
+        "customers": 2000,
+        "map_at_12": 0.021502330949023322,
+        "recall_at_12": 0.04779378121878122
+      }
+    },
+    "stage2_lightgbm": {
+      "cold_start": {
+        "candidate_recall": 0.21417742553616914,
+        "customers": 775,
+        "map_at_12": 0.006204802488547776,
+        "recall_at_12": 0.021460864639981786
+      },
+      "history": {
+        "candidate_recall": 0.2637822062873557,
+        "customers": 1225,
+        "map_at_12": 0.03804607518332008,
+        "recall_at_12": 0.07180410137660406
+      },
+      "overall": {
+        "candidate_recall": 0.24456035374627094,
+        "customers": 2000,
+        "map_at_12": 0.025707582014095814,
+        "recall_at_12": 0.05229609714116293
+      }
+    }
+  },
+  "published_design": "about 600 popularity/section candidates -> LightGBM Top-130 -> add all history -> richer LightGBM",
+  "runtime_seconds": 276.25924766692333,
+  "scope": "reproduction inspired by the detailed second-place write-up; excludes teammate graph-walk candidates and private feature framework",
+  "training": {
+    "stage1": {
+      "examples": 119364,
+      "positives": 5684,
+      "relevant_pairs": 18480,
+      "retrieved_pair_fraction": 0.30757575757575756,
+      "retrieved_relevant_pairs": 5684,
+      "users": 6000,
+      "users_with_retrieved_positive": 3332
+    },
+    "stage2": {
+      "examples": 79695,
+      "positives": 3795,
+      "relevant_pairs": 18922,
+      "retrieved_pair_fraction": 0.20056019448261284,
+      "retrieved_relevant_pairs": 3795,
+      "users": 6000,
+      "users_with_retrieved_positive": 2533
+    }
+  },
+  "windows": {
+    "final": {
+      "context_start": "2020-07-22",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "stage1_train": {
+      "context_start": "2020-07-08",
+      "label_end": "2020-09-09",
+      "label_start": "2020-09-02"
+    },
+    "stage2_train": {
+      "context_start": "2020-07-15",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    }
+  }
+}

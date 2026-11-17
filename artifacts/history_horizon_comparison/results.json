@@ -1,0 +1,53 @@
+{
+  "cohort_definitions": {
+    "active_4w": "purchase in the final snapshot's most recent 28 days",
+    "cold_after_8w": "no purchase in the final snapshot's 56-day context",
+    "recovered_5_to_8w": "no purchase in 28 days but a purchase in days 29-56"
+  },
+  "metrics": {
+    "eight_weeks": {
+      "active_4w": {
+        "candidate_recall": 0.41855210508999147,
+        "customers": 885,
+        "map_at_12": 0.05019292501284027,
+        "recall_at_12": 0.11052259887005648
+      },
+      "cold_after_8w": {
+        "candidate_recall": 0.30872698714226726,
+        "customers": 775,
+        "map_at_12": 0.0061095818842362625,
+        "recall_at_12": 0.0199295167198393
+      },
+      "recovered_5_to_8w": {
+        "candidate_recall": 0.28954272658026525,
+        "customers": 340,
+        "map_at_12": 0.008575159861924567,
+        "recall_at_12": 0.02333110516934046
+      }
+    },
+    "four_weeks": {
+      "active_4w": {
+        "candidate_recall": 0.46889099499518244,
+        "customers": 885,
+        "map_at_12": 0.05423581184456891,
+        "recall_at_12": 0.1122967412374192
+      },
+      "cold_after_8w": {
+        "candidate_recall": 0.4379342972062837,
+        "customers": 775,
+        "map_at_12": 0.005485226192138635,
+        "recall_at_12": 0.0199027023721421
+      },
+      "recovered_5_to_8w": {
+        "candidate_recall": 0.3845372111927612,
+        "customers": 340,
+        "map_at_12": 0.0071073892519970955,
+        "recall_at_12": 0.017506142808000395
+      }
+    }
+  },
+  "profiles": {
+    "eight_weeks": "hybrid_eight_week_experiment",
+    "four_weeks": "hybrid_expanded_repeat_experiment"
+  }
+}

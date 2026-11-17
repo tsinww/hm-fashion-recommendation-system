@@ -1,0 +1,103 @@
+{
+  "candidate_source": "artifacts/hybrid_expanded_repeat_experiment",
+  "config": {
+    "catboost_depth": 8,
+    "catboost_iterations": 500,
+    "learning_rate": 0.05,
+    "lgbm_estimators": 250,
+    "negatives_per_positive": 20,
+    "num_leaves": 31,
+    "score_batch_size": 100000,
+    "seed": 42
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6"
+  },
+  "metrics": {
+    "catboost": {
+      "cold_start": {
+        "candidate_recall": 0.4216517777044024,
+        "customers": 1115,
+        "map_at_12": 0.0062985071729466345,
+        "recall_at_12": 0.01936474789731811
+      },
+      "history": {
+        "candidate_recall": 0.46889099499518244,
+        "customers": 885,
+        "map_at_12": 0.05249561664533416,
+        "recall_at_12": 0.10745867911122148
+      },
+      "overall": {
+        "candidate_recall": 0.44255513135557256,
+        "customers": 2000,
+        "map_at_12": 0.026740728114478116,
+        "recall_at_12": 0.058346312459470355
+      }
+    },
+    "equal_rank_fusion": {
+      "cold_start": {
+        "candidate_recall": 0.4216517777044024,
+        "customers": 1115,
+        "map_at_12": 0.005976832092623252,
+        "recall_at_12": 0.02129655799056318
+      },
+      "history": {
+        "candidate_recall": 0.46889099499518244,
+        "customers": 885,
+        "map_at_12": 0.054965249413695745,
+        "recall_at_12": 0.11126102867628289
+      },
+      "overall": {
+        "candidate_recall": 0.44255513135557256,
+        "customers": 2000,
+        "map_at_12": 0.02765420675719783,
+        "recall_at_12": 0.06110583626899416
+      }
+    },
+    "lightgbm": {
+      "cold_start": {
+        "candidate_recall": 0.4216517777044024,
+        "customers": 1115,
+        "map_at_12": 0.0059798768112883,
+        "recall_at_12": 0.019171912908637005
+      },
+      "history": {
+        "candidate_recall": 0.46889099499518244,
+        "customers": 885,
+        "map_at_12": 0.05423581184456891,
+        "recall_at_12": 0.1122967412374192
+      },
+      "overall": {
+        "candidate_recall": 0.44255513135557256,
+        "customers": 2000,
+        "map_at_12": 0.02733312806351497,
+        "recall_at_12": 0.06037964944412313
+      }
+    }
+  },
+  "runtime_seconds": 124.92028870806098,
+  "scope": "project's own saved four-week 1,012-candidate pool; no retrieval changes",
+  "training": {
+    "examples": 152292,
+    "positives": 7252,
+    "relevant_pairs": 18922,
+    "retrieved_pair_fraction": 0.3832575837649297,
+    "retrieved_relevant_pairs": 7252,
+    "users": 6000,
+    "users_with_retrieved_positive": 3804
+  },
+  "windows": {
+    "final": {
+      "context_start": "2020-08-19",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "train": {
+      "context_start": "2020-08-12",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "baseline_candidate_union": {
+    "all_inactive": {
+      "candidate_recall": 0.4216517777044024,
+      "customers": 1115,
+      "map_at_12": 0.00786526262903585,
+      "recall_at_12": 0.020278659595983177
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.419426716894615,
+      "customers": 820,
+      "map_at_12": 0.007596247756308732,
+      "recall_at_12": 0.01860916460162288
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.43029229912141304,
+      "customers": 158,
+      "map_at_12": 0.00639943741209564,
+      "recall_at_12": 0.0245253164556962
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.4250046790192776,
+      "customers": 137,
+      "map_at_12": 0.011165938394822649,
+      "recall_at_12": 0.02537365311087939
+    }
+  },
+  "baseline_lightgbm": {
+    "all_inactive": {
+      "candidate_recall": 0.019171912908637005,
+      "customers": 1115,
+      "map_at_12": 0.0059798768112883,
+      "recall_at_12": 0.019171912908637005
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.017380101089183246,
+      "customers": 820,
+      "map_at_12": 0.006627108916162342,
+      "recall_at_12": 0.017380101089183246
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.023997890295358648,
+      "customers": 158,
+      "map_at_12": 0.004439170182841069,
+      "recall_at_12": 0.023997890295358648
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.024330900243309,
+      "customers": 137,
+      "map_at_12": 0.0038828061638280617,
+      "recall_at_12": 0.024330900243309
+    }
+  },
+  "cohort_definitions": {
+    "all_inactive": "no purchase in the final four-week context",
+    "history_within_180d": "older transaction in the 180 days before context",
+    "no_prior_transaction": "no earlier transaction in the provided data",
+    "stale_history_over_180d": "prior transaction exists but none in that 180-day window"
+  },
+  "new_behavioral_knn": {
+    "all_inactive": {
+      "candidate_recall": 0.08795814585854708,
+      "customers": 1115,
+      "map_at_12": 0.004680530480978912,
+      "recall_at_12": 0.010231973805964837
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.11960162516131707,
+      "customers": 820,
+      "map_at_12": 0.006364379861331081,
+      "recall_at_12": 0.01391298877274487
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.0,
+      "customers": 158,
+      "map_at_12": 0.0,
+      "recall_at_12": 0.0
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.0,
+      "customers": 137,
+      "map_at_12": 0.0,
+      "recall_at_12": 0.0
+    }
+  },
+  "new_global_popularity": {
+    "all_inactive": {
+      "candidate_recall": 0.20193880502577694,
+      "customers": 1115,
+      "map_at_12": 0.007616625900258187,
+      "recall_at_12": 0.020951305335893487
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.19380089955330648,
+      "customers": 820,
+      "map_at_12": 0.007374942807869637,
+      "recall_at_12": 0.018304286552842393
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.20575168502383695,
+      "customers": 158,
+      "map_at_12": 0.005775316455696202,
+      "recall_at_12": 0.01819620253164557
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.24625010026469882,
+      "customers": 137,
+      "map_at_12": 0.011186750192224645,
+      "recall_at_12": 0.03997219325686479
+    }
+  },
+  "new_inactive_lightgbm": {
+    "all_inactive": {
+      "candidate_recall": 0.38645707135238433,
+      "customers": 1115,
+      "map_at_12": 0.006856624495157487,
+      "recall_at_12": 0.022761028209458703
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.3755967518568421,
+      "customers": 820,
+      "map_at_12": 0.007354435658224856,
+      "recall_at_12": 0.021272670419011878
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.4104962372367435,
+      "customers": 158,
+      "map_at_12": 0.005127495570533545,
+      "recall_at_12": 0.030480437284234756
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.42373644198461713,
+      "customers": 137,
+      "map_at_12": 0.005871202716875292,
+      "recall_at_12": 0.02276677094195342
+    }
+  },
+  "new_inactive_union": {
+    "all_inactive": {
+      "candidate_recall": 0.38645707135238433,
+      "customers": 1115,
+      "map_at_12": 0.007358029018102688,
+      "recall_at_12": 0.020158010439459577
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.3755967518568421,
+      "customers": 820,
+      "map_at_12": 0.0069997663607201934,
+      "recall_at_12": 0.020997375983736702
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.4104962372367435,
+      "customers": 158,
+      "map_at_12": 0.005479638153688787,
+      "recall_at_12": 0.015875527426160337
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.42373644198461713,
+      "customers": 137,
+      "map_at_12": 0.011668694241686942,
+      "recall_at_12": 0.020072992700729927
+    }
+  },
+  "new_metadata_knn": {
+    "all_inactive": {
+      "candidate_recall": 0.13652196509104836,
+      "customers": 1115,
+      "map_at_12": 0.003474545979403976,
+      "recall_at_12": 0.014772581678411275
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.12999977902969104,
+      "customers": 820,
+      "map_at_12": 0.0042708365106739095,
+      "recall_at_12": 0.01712979094076655
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.1506484373572981,
+      "customers": 158,
+      "map_at_12": 0.0018008406853343563,
+      "recall_at_12": 0.012183544303797469
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.1592680231366363,
+      "customers": 137,
+      "map_at_12": 0.0006386861313868613,
+      "recall_at_12": 0.0036496350364963502
+    }
+  },
+  "new_segment_popularity": {
+    "all_inactive": {
+      "candidate_recall": 0.17344270421500424,
+      "customers": 1115,
+      "map_at_12": 0.007043630225564881,
+      "recall_at_12": 0.02167121899420696
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.16127113866274176,
+      "customers": 820,
+      "map_at_12": 0.0065660062127832165,
+      "recall_at_12": 0.020444105797924796
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.20704513489323617,
+      "customers": 158,
+      "map_at_12": 0.006963509416041061,
+      "recall_at_12": 0.02731588032220944
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.20754124221277506,
+      "customers": 137,
+      "map_at_12": 0.009994803790424228,
+      "recall_at_12": 0.022506082725060828
+    }
+  }
+}

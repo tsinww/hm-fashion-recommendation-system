@@ -1,0 +1,174 @@
+{
+  "final_metrics": {
+    "old_pool_plus_bounded_knn": {
+      "all_inactive": {
+        "candidate_recall": 0.4246666153829171,
+        "customers": 1115,
+        "map_at_12": 0.008078714681052927,
+        "mean_candidate_count": 1016.8170403587444,
+        "recall_at_12": 0.020287201129188383
+      },
+      "history_within_180d": {
+        "candidate_recall": 0.42352616081113215,
+        "customers": 820,
+        "map_at_12": 0.007574641491235568,
+        "mean_candidate_count": 1018.4536585365854,
+        "recall_at_12": 0.017909396889660048
+      },
+      "no_prior_transaction": {
+        "candidate_recall": 0.43029229912141304,
+        "customers": 158,
+        "map_at_12": 0.0064316690107829345,
+        "mean_candidate_count": 1012.3227848101266,
+        "recall_at_12": 0.02188818565400844
+      },
+      "stale_history_over_180d": {
+        "candidate_recall": 0.4250046790192776,
+        "customers": 137,
+        "map_at_12": 0.012995307612095934,
+        "mean_candidate_count": 1012.2043795620438,
+        "recall_at_12": 0.03267292318387209
+      }
+    },
+    "preserved_old_raw_pool": {
+      "all_inactive": {
+        "candidate_recall": 0.4216517777044024,
+        "customers": 1115,
+        "map_at_12": 0.00786526262903585,
+        "mean_candidate_count": 1012.0,
+        "recall_at_12": 0.020278659595983177
+      },
+      "history_within_180d": {
+        "candidate_recall": 0.419426716894615,
+        "customers": 820,
+        "map_at_12": 0.007596247756308732,
+        "mean_candidate_count": 1012.0,
+        "recall_at_12": 0.01860916460162288
+      },
+      "no_prior_transaction": {
+        "candidate_recall": 0.43029229912141304,
+        "customers": 158,
+        "map_at_12": 0.00639943741209564,
+        "mean_candidate_count": 1012.0,
+        "recall_at_12": 0.0245253164556962
+      },
+      "stale_history_over_180d": {
+        "candidate_recall": 0.4250046790192776,
+        "customers": 137,
+        "map_at_12": 0.011165938394822649,
+        "mean_candidate_count": 1012.0,
+        "recall_at_12": 0.02537365311087939
+      }
+    }
+  },
+  "grid_trials": [
+    {
+      "knn_quota": 25,
+      "knn_scale": 0.5,
+      "map_at_12": 0.006074302320326033,
+      "recall_at_12": 0.020651461050314932
+    },
+    {
+      "knn_quota": 100,
+      "knn_scale": 0.5,
+      "map_at_12": 0.006069867558806252,
+      "recall_at_12": 0.020644046063142858
+    },
+    {
+      "knn_quota": 200,
+      "knn_scale": 0.5,
+      "map_at_12": 0.006069867558806252,
+      "recall_at_12": 0.020644046063142858
+    },
+    {
+      "knn_quota": 50,
+      "knn_scale": 0.5,
+      "map_at_12": 0.00606848941977629,
+      "recall_at_12": 0.02058176017089745
+    },
+    {
+      "knn_quota": 25,
+      "knn_scale": 0.25,
+      "map_at_12": 0.0059995882417320625,
+      "recall_at_12": 0.02099143821215444
+    },
+    {
+      "knn_quota": 50,
+      "knn_scale": 0.25,
+      "map_at_12": 0.005992151908384799,
+      "recall_at_12": 0.02088021340457336
+    },
+    {
+      "knn_quota": 100,
+      "knn_scale": 0.25,
+      "map_at_12": 0.005991767427568469,
+      "recall_at_12": 0.02088021340457336
+    },
+    {
+      "knn_quota": 200,
+      "knn_scale": 0.25,
+      "map_at_12": 0.005988059933982432,
+      "recall_at_12": 0.02088021340457336
+    },
+    {
+      "knn_quota": 25,
+      "knn_scale": 1.0,
+      "map_at_12": 0.005950487188602143,
+      "recall_at_12": 0.020867387277977132
+    },
+    {
+      "knn_quota": 50,
+      "knn_scale": 1.0,
+      "map_at_12": 0.005924534733499891,
+      "recall_at_12": 0.020555957816750098
+    },
+    {
+      "knn_quota": 100,
+      "knn_scale": 1.0,
+      "map_at_12": 0.005924197688628433,
+      "recall_at_12": 0.020555957816750098
+    },
+    {
+      "knn_quota": 200,
+      "knn_scale": 1.0,
+      "map_at_12": 0.005924001079120083,
+      "recall_at_12": 0.020555957816750098
+    },
+    {
+      "knn_quota": 25,
+      "knn_scale": 0.1,
+      "map_at_12": 0.005805756166316658,
+      "recall_at_12": 0.020534118878316892
+    },
+    {
+      "knn_quota": 50,
+      "knn_scale": 0.1,
+      "map_at_12": 0.005783721857845103,
+      "recall_at_12": 0.020261618099743237
+    },
+    {
+      "knn_quota": 100,
+      "knn_scale": 0.1,
+      "map_at_12": 0.005783721857845103,
+      "recall_at_12": 0.020261618099743237
+    },
+    {
+      "knn_quota": 200,
+      "knn_scale": 0.1,
+      "map_at_12": 0.005783721857845103,
+      "recall_at_12": 0.020261618099743237
+    }
+  ],
+  "knn_internal_weights": {
+    "behavioral_knn": 0.25,
+    "metadata_knn": 0.25,
+    "other_knn_pool_sources": 1.0
+  },
+  "selected": {
+    "knn_quota": 25,
+    "knn_scale": 0.5,
+    "map_at_12": 0.006074302320326033,
+    "recall_at_12": 0.020651461050314932
+  },
+  "selection_protocol": "quota/scale selected on Sep 9-15 inactive labels and frozen for Sep 16-22"
+}

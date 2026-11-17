@@ -1,0 +1,30 @@
+{
+  "architecture": {
+    "active": "equal reciprocal-rank fusion of LightGBM and CatBoost",
+    "inactive": "preserved 1,012-candidate pool plus bounded KNN; add time-decayed ItemCF for recent-dormant customers; weighted reciprocal-rank ordering"
+  },
+  "metrics": {
+    "active": {
+      "customers": 885,
+      "map_at_12": 0.054965249413695745,
+      "recall_at_12": 0.11126102867628289
+    },
+    "inactive": {
+      "customers": 1115,
+      "map_at_12": 0.008164072044997733,
+      "recall_at_12": 0.02133353894682665
+    },
+    "overall": {
+      "customers": 2000,
+      "map_at_12": 0.028873593030646603,
+      "recall_at_12": 0.06112645315211105
+    }
+  },
+  "status": "post_hoc_diagnostic_not_untouched_model_selection",
+  "warning": "The component predictions are leakage-safe, but the active/inactive routing policy was chosen after inspecting final-week cohort results. Validate the frozen route on another temporal fold before treating it as an unbiased official result.",
+  "window": {
+    "context_start": "2020-08-19",
+    "label_end": "2020-09-23",
+    "label_start": "2020-09-16"
+  }
+}

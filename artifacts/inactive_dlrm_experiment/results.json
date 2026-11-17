@@ -1,0 +1,83 @@
+{
+  "candidate_pool": "artifacts/inactive_knn_experiment; retrieval was not rerun",
+  "config": {
+    "batch_size": 2048,
+    "embedding_dim": 8,
+    "epochs": 3,
+    "learning_rate": 0.001,
+    "negatives_per_positive": 20,
+    "score_batch_size": 8192,
+    "seed": 42
+  },
+  "comparison_same_candidate_pool": {
+    "all_inactive": {
+      "inactive_lightgbm": {
+        "candidate_recall": 0.38645707135238433,
+        "map_at_12": 0.006856624495157487,
+        "recall_at_12": 0.022761028209458703
+      },
+      "pairwise_dlrm": {
+        "candidate_recall": 0.38645707135238433,
+        "map_at_12": 0.006009019144188907,
+        "recall_at_12": 0.02055172505620936
+      },
+      "raw_reciprocal_rank": {
+        "candidate_recall": 0.38645707135238433,
+        "map_at_12": 0.007358029018102688,
+        "recall_at_12": 0.020158010439459577
+      }
+    }
+  },
+  "environment": {
+    "device": "cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6",
+    "torch": "2.15.0"
+  },
+  "metrics": {
+    "all_inactive": {
+      "candidate_recall": 0.38645707135238433,
+      "customers": 1115,
+      "map_at_12": 0.006009019144188907,
+      "recall_at_12": 0.02055172505620936
+    },
+    "history_within_180d": {
+      "candidate_recall": 0.3755967518568421,
+      "customers": 820,
+      "map_at_12": 0.006341040863253407,
+      "recall_at_12": 0.019936675451919354
+    },
+    "no_prior_transaction": {
+      "candidate_recall": 0.4104962372367435,
+      "customers": 158,
+      "map_at_12": 0.002835581553935984,
+      "recall_at_12": 0.019562715765247412
+    },
+    "stale_history_over_180d": {
+      "candidate_recall": 0.42373644198461713,
+      "customers": 137,
+      "map_at_12": 0.007681612791101841,
+      "recall_at_12": 0.02537365311087939
+    }
+  },
+  "objective": "pairwise softplus(s_negative - s_positive) within each customer's saved candidate pool",
+  "runtime_seconds": {
+    "final_scoring": 1.275407375069335,
+    "total": 87.78044604184106,
+    "training": 2.6278999999631196
+  },
+  "training": {
+    "losses": [
+      0.6599465847211556,
+      0.5773648256792581,
+      0.5446767035187173
+    ],
+    "relevant_pairs": 10330,
+    "retrieved_pair_fraction": 0.35295256534365926,
+    "retrieved_relevant_pairs": 3646,
+    "training_pairs": 72920,
+    "users": 3211,
+    "users_with_retrieved_positive": 1965
+  }
+}

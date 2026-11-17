@@ -1,0 +1,184 @@
+{
+  "config": {
+    "batch_size": 4096,
+    "candidate_k": 1000,
+    "embedding_dim": 32,
+    "epochs": 3,
+    "evaluation_customers": 2000,
+    "evaluation_seed": 42,
+    "history_start": "2020-08-19",
+    "learning_rate": 0.003,
+    "loss": "BPR pairwise loss",
+    "mf_training_seed": 46,
+    "negatives_per_positive": 1,
+    "setup": "four_week_project_mf",
+    "validation_end": "2020-09-23",
+    "validation_start": "2020-09-16"
+  },
+  "dataset": {
+    "catalog_fraction_retrieved": 0.03447206039504981,
+    "eligible_articles": 29009,
+    "history_customers": 235277,
+    "history_distinct_pairs": 939710,
+    "history_rows": 1059723,
+    "sample_cold_start_customers": 1115,
+    "sample_exact_repeat_pair_fraction": 0.024916679892080622,
+    "sample_exact_repeat_pairs": 157,
+    "sample_fallback_fraction": 0.5575,
+    "sample_history_customers": 885,
+    "sample_validation_distinct_pairs": 6301,
+    "validation_customers": 68984,
+    "validation_rows": 240311
+  },
+  "environment": {
+    "device": "cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6",
+    "torch": "2.15.0"
+  },
+  "metrics": {
+    "allow_seen_articles": {
+      "candidate_k": 1000,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.4253405106396133,
+          "customers": 885,
+          "map_at_12": 0.010138967599823127,
+          "recall_at_12": 0.03060726670397657
+        },
+        "overall": {
+          "candidate_recall": 0.4237538021292433,
+          "customers": 2000,
+          "map_at_12": 0.008732762102315675,
+          "recall_at_12": 0.025224068241270253
+        }
+      },
+      "history_customer_top12_seen_article_fraction": 0.03145009416195857,
+      "new_item_metrics": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.40468511278984226,
+          "customers": 847,
+          "map_at_12": 0.008630200437419192,
+          "recall_at_12": 0.027692193832203556
+        },
+        "overall": {
+          "candidate_recall": 0.4148060870924695,
+          "customers": 1962,
+          "map_at_12": 0.008054188404323107,
+          "recall_at_12": 0.023861362704076277
+        }
+      },
+      "repeat_item_metrics": {
+        "cold_start": {
+          "candidate_recall": NaN,
+          "customers": 0,
+          "map_at_12": NaN,
+          "recall_at_12": NaN
+        },
+        "history": {
+          "candidate_recall": 0.6597701149425287,
+          "customers": 116,
+          "map_at_12": 0.024368686868686866,
+          "recall_at_12": 0.06853448275862069
+        },
+        "overall": {
+          "candidate_recall": 0.6597701149425287,
+          "customers": 116,
+          "map_at_12": 0.024368686868686866,
+          "recall_at_12": 0.06853448275862069
+        }
+      },
+      "top12_seen_article_fraction": 0.013916666666666667
+    },
+    "exclude_seen_articles": {
+      "candidate_k": 1000,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.3729682156401997,
+          "customers": 885,
+          "map_at_12": 0.007724045676023077,
+          "recall_at_12": 0.025277699848985993
+        },
+        "overall": {
+          "candidate_recall": 0.40057906159200274,
+          "customers": 2000,
+          "map_at_12": 0.0076641591510341524,
+          "recall_at_12": 0.022865734907936922
+        }
+      },
+      "history_customer_top12_seen_article_fraction": 0.0,
+      "new_item_metrics": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.4050786586379336,
+          "customers": 847,
+          "map_at_12": 0.00907119275625769,
+          "recall_at_12": 0.02828251260434051
+        },
+        "overall": {
+          "candidate_recall": 0.41497598175777706,
+          "customers": 1962,
+          "map_at_12": 0.008244565822292632,
+          "recall_at_12": 0.024116204702037538
+        }
+      },
+      "repeat_item_metrics": {
+        "cold_start": {
+          "candidate_recall": NaN,
+          "customers": 0,
+          "map_at_12": NaN,
+          "recall_at_12": NaN
+        },
+        "history": {
+          "candidate_recall": 0.0,
+          "customers": 116,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        },
+        "overall": {
+          "candidate_recall": 0.0,
+          "customers": 116,
+          "map_at_12": 0.0,
+          "recall_at_12": 0.0
+        }
+      },
+      "top12_seen_article_fraction": 0.0
+    }
+  },
+  "runtime_seconds": {
+    "candidate_scoring_both_policies": 0.13481650012545288,
+    "mf_training": 11.4456075001508,
+    "total": 18.595408249879256
+  },
+  "training": {
+    "epoch_losses": [
+      0.6923097467978375,
+      0.5885596318025395,
+      0.3548047216352809
+    ]
+  }
+}

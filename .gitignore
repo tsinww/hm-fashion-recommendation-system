@@ -1,0 +1,22 @@
+.DS_Store
+.idea/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Third-party source notebook and Kaggle API metadata are kept locally; the
+# adapted baseline runner and attribution README remain publishable.
+external_baselines/kaggle_implicit_als/h_m_implicit_als.ipynb
+external_baselines/kaggle_implicit_als/kaggle_api_response.json
+
+# Raw Kaggle data and generated experiment artifacts are intentionally local.
+Data/
+artifacts/**
+
+# Keep compact, human-readable experiment records in Git while excluding
+# candidate arrays, model files, caches, and prediction CSVs.
+!artifacts/**/
+!artifacts/**/results.json
+

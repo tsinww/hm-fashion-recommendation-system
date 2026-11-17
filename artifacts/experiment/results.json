@@ -1,0 +1,198 @@
+{
+  "config": {
+    "batch_size": 4096,
+    "candidate_k": 1000,
+    "downstream_epochs": 2,
+    "learning_rate": 0.003,
+    "max_eval_users": 2000,
+    "max_mf_pairs": null,
+    "max_train_users": 6000,
+    "mf_dim": 32,
+    "mf_epochs": 3,
+    "negatives_per_positive": 20,
+    "profile": "experiment",
+    "rerank_k": 100,
+    "seed": 42
+  },
+  "dataset": {
+    "evaluation_cold_start_customers": 1115,
+    "evaluation_customers_sampled": 2000,
+    "evaluation_history_customers": 885,
+    "final_catalog_items": 29009,
+    "final_context_customers": 235277,
+    "final_context_rows": 1059723,
+    "final_validation_cold_start_customers": 37889,
+    "final_validation_customers": 68984,
+    "final_validation_history_customers": 31095,
+    "final_validation_rows": 240311,
+    "train_catalog_items": 29278,
+    "train_context_rows": 1069693,
+    "train_customers_sampled": 6000,
+    "train_label_rows": 255241,
+    "validation_pair_catalog_coverage": 0.9563561339469926,
+    "validation_pairs_in_eligible_catalog": 6026,
+    "validation_relevant_pairs": 6301
+  },
+  "environment": {
+    "device": "cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "python": "3.12.6",
+    "torch": "2.15.0"
+  },
+  "metrics": {
+    "mf": {
+      "candidate_k": 1000,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.4253405106396133,
+          "customers": 885,
+          "map_at_12": 0.010138967599823127,
+          "recall_at_12": 0.03060726670397657
+        },
+        "overall": {
+          "candidate_recall": 0.4237538021292433,
+          "customers": 2000,
+          "map_at_12": 0.008732762102315675,
+          "recall_at_12": 0.025224068241270253
+        }
+      }
+    },
+    "mf_two_tower": {
+      "candidate_k": 100,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.09111539708554105,
+          "customers": 1115,
+          "map_at_12": 0.00413403197035484,
+          "recall_at_12": 0.015927561804361424
+        },
+        "history": {
+          "candidate_recall": 0.10274417340718438,
+          "customers": 885,
+          "map_at_12": 0.004490726279668976,
+          "recall_at_12": 0.0188386001945324
+        },
+        "overall": {
+          "candidate_recall": 0.09626113060786821,
+          "customers": 2000,
+          "map_at_12": 0.004291869202226345,
+          "recall_at_12": 0.01721569629201208
+        }
+      }
+    },
+    "mf_two_tower_dlrm": {
+      "candidate_k": 100,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.09111539708554105,
+          "customers": 1115,
+          "map_at_12": 0.003615904938774894,
+          "recall_at_12": 0.013298863319042691
+        },
+        "history": {
+          "candidate_recall": 0.10274417340718438,
+          "customers": 885,
+          "map_at_12": 0.004906963093403772,
+          "recall_at_12": 0.017761566744617593
+        },
+        "overall": {
+          "candidate_recall": 0.09626113060786821,
+          "customers": 2000,
+          "map_at_12": 0.004187198172198173,
+          "recall_at_12": 0.015273609584859581
+        }
+      }
+    },
+    "recent_popularity": {
+      "candidate_k": 1000,
+      "cohorts": {
+        "cold_start": {
+          "candidate_recall": 0.4224943967196671,
+          "customers": 1115,
+          "map_at_12": 0.007616625900258187,
+          "recall_at_12": 0.020951305335893487
+        },
+        "history": {
+          "candidate_recall": 0.40852206386353945,
+          "customers": 885,
+          "map_at_12": 0.005038997725438404,
+          "recall_at_12": 0.02148506860371267
+        },
+        "overall": {
+          "candidate_recall": 0.4163116394308306,
+          "customers": 2000,
+          "map_at_12": 0.006476025432900433,
+          "recall_at_12": 0.021187495581903477
+        }
+      }
+    }
+  },
+  "runtime_seconds": {
+    "dlrm_training": 0.5712658751290292,
+    "final_snapshot_training_and_scoring": 13.349230749998242,
+    "load_and_features": 80.94549975008704,
+    "total": 118.01753254211508,
+    "train_snapshot_mf_and_candidates": 11.838210166897625,
+    "two_tower_training": 8.078414542134851
+  },
+  "training": {
+    "dlrm_examples": {
+      "positives": 1701,
+      "relevant_pairs": 18922,
+      "retrieved_pair_fraction": 0.08989535989853081,
+      "retrieved_relevant_pairs": 1701,
+      "rows": 35571,
+      "users": 6000,
+      "users_with_retrieved_positive": 1263
+    },
+    "dlrm_losses": [
+      1.3391675346699508,
+      1.3102284325194324
+    ],
+    "dlrm_objective": "weighted BCE on positives and hard negatives sampled after two-tower narrowing",
+    "final_mf_losses": [
+      0.6923097467978375,
+      0.5885596318025395,
+      0.3548047216352809
+    ],
+    "mf_objective": "BPR pairwise loss with a uniform unobserved-item negative",
+    "train_mf_losses": [
+      0.6923685425319543,
+      0.5983344927570919,
+      0.36697290961957296
+    ],
+    "two_tower_examples": {
+      "positives": 6945,
+      "relevant_pairs": 18922,
+      "retrieved_pair_fraction": 0.3670330831835958,
+      "retrieved_relevant_pairs": 6945,
+      "rows": 145845,
+      "users": 6000,
+      "users_with_retrieved_positive": 3649
+    },
+    "two_tower_losses": [
+      1.4265783702028787,
+      1.267737454570943
+    ],
+    "two_tower_objective": "weighted BCE on positives and hard negatives sampled from MF candidates"
+  },
+  "windows": {
+    "downstream_training": {
+      "context_start": "2020-08-12",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    },
+    "final_evaluation": {
+      "context_start": "2020-08-19",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    }
+  }
+}

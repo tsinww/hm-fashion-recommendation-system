@@ -1,0 +1,110 @@
+{
+  "cohort_definitions": {
+    "active_4w": "purchase in days 1-28 before the cutoff",
+    "cold_after_8w": "no purchase in days 1-56",
+    "recovered_5_to_6w": "no purchase in days 1-28; purchase in days 29-42",
+    "recovered_7_to_8w": "no purchase in days 1-42; purchase in days 43-56"
+  },
+  "metrics": {
+    "eight_weeks": {
+      "active_4w": {
+        "candidate_recall": 0.41855210508999147,
+        "customers": 885,
+        "map_at_12": 0.05019292501284027,
+        "recall_at_12": 0.11052259887005648
+      },
+      "cold_after_8w": {
+        "candidate_recall": 0.30872698714226726,
+        "customers": 775,
+        "map_at_12": 0.0061095818842362625,
+        "recall_at_12": 0.0199295167198393
+      },
+      "recovered_5_to_6w": {
+        "candidate_recall": 0.32369527824433936,
+        "customers": 199,
+        "map_at_12": 0.012411927361676105,
+        "recall_at_12": 0.030286533678493478
+      },
+      "recovered_7_to_8w": {
+        "candidate_recall": 0.24134160756501183,
+        "customers": 141,
+        "map_at_12": 0.003160147575041192,
+        "recall_at_12": 0.013514578408195428
+      }
+    },
+    "four_weeks": {
+      "active_4w": {
+        "candidate_recall": 0.46889099499518244,
+        "customers": 885,
+        "map_at_12": 0.05423581184456891,
+        "recall_at_12": 0.1122967412374192
+      },
+      "cold_after_8w": {
+        "candidate_recall": 0.4379342972062837,
+        "customers": 775,
+        "map_at_12": 0.005485226192138635,
+        "recall_at_12": 0.0199027023721421
+      },
+      "recovered_5_to_6w": {
+        "candidate_recall": 0.39684131480808366,
+        "customers": 199,
+        "map_at_12": 0.008052749719416386,
+        "recall_at_12": 0.022121048013669015
+      },
+      "recovered_7_to_8w": {
+        "candidate_recall": 0.36717184509737705,
+        "customers": 141,
+        "map_at_12": 0.005773157102944337,
+        "recall_at_12": 0.01099290780141844
+      }
+    },
+    "six_weeks": {
+      "active_4w": {
+        "candidate_recall": 0.44084472975051237,
+        "customers": 885,
+        "map_at_12": 0.053656188390819815,
+        "recall_at_12": 0.10711021088139733
+      },
+      "cold_after_8w": {
+        "candidate_recall": 0.3448854526910554,
+        "customers": 775,
+        "map_at_12": 0.008023412199679482,
+        "recall_at_12": 0.020104041120170155
+      },
+      "recovered_5_to_6w": {
+        "candidate_recall": 0.38343754162320676,
+        "customers": 199,
+        "map_at_12": 0.01003266694221468,
+        "recall_at_12": 0.03168764953345752
+      },
+      "recovered_7_to_8w": {
+        "candidate_recall": 0.257456658786446,
+        "customers": 141,
+        "map_at_12": 0.005748667867462194,
+        "recall_at_12": 0.01683412135539795
+      }
+    }
+  },
+  "profiles": {
+    "eight_weeks": "hybrid_eight_week_experiment",
+    "four_weeks": "hybrid_expanded_repeat_experiment",
+    "six_weeks": "hybrid_six_week_experiment"
+  },
+  "windows": {
+    "eight_weeks": {
+      "context_start": "2020-07-22",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "four_weeks": {
+      "context_start": "2020-08-19",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "six_weeks": {
+      "context_start": "2020-08-05",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    }
+  }
+}

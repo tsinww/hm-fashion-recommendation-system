@@ -1,0 +1,60 @@
+{
+  "config": {
+    "estimators": 350,
+    "eval_users": 2000,
+    "first_candidate_k": 100,
+    "learning_rate": 0.05,
+    "negatives_per_positive": 20,
+    "num_leaves": 31,
+    "score_batch_size": 100000,
+    "second_final_k": 330,
+    "second_initial_k": 600,
+    "second_stage1_k": 130,
+    "seed": 42,
+    "train_users": 6000
+  },
+  "metrics": {
+    "cold_start": {
+      "candidate_recall": 0.08366214823379842,
+      "customers": 916,
+      "map_at_12": 0.006787455680741707,
+      "recall_at_12": 0.023824769662651755
+    },
+    "history": {
+      "candidate_recall": 0.17877744636113624,
+      "customers": 1084,
+      "map_at_12": 0.045946194283371405,
+      "recall_at_12": 0.09479738899832607
+    },
+    "overall": {
+      "candidate_recall": 0.13521463981881549,
+      "customers": 2000,
+      "map_at_12": 0.028011492003367004,
+      "recall_at_12": 0.06229192934258724
+    }
+  },
+  "published_design": "six-week training, Top-100 multi-strategy retrieval, interaction features, negative downsampling, LightGBM classifier",
+  "runtime_seconds": 120.48202329105698,
+  "scope": "single-model reproduction inspired by the published first-place design; not the private 12-model ensemble",
+  "training": {
+    "examples": 41703,
+    "positives": 1997,
+    "relevant_pairs": 18922,
+    "retrieved_pair_fraction": 0.10553852658281365,
+    "retrieved_relevant_pairs": 1997,
+    "users": 6000,
+    "users_with_retrieved_positive": 1543
+  },
+  "windows": {
+    "final": {
+      "context_start": "2020-08-05",
+      "label_end": "2020-09-23",
+      "label_start": "2020-09-16"
+    },
+    "train": {
+      "context_start": "2020-07-29",
+      "label_end": "2020-09-16",
+      "label_start": "2020-09-09"
+    }
+  }
+}
